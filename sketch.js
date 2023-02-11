@@ -8,7 +8,6 @@ function setup() {
   
   img = loadImage('fruit.jpg')
   
-  
 }
 
 function draw() {
@@ -19,8 +18,8 @@ function draw() {
 }
 
 function drawTree(){
-  // let bLen = random(20,100);
-  // let bAng = PI*0.5;
+  let bLen = random(20,100);
+  let bAng = PI*0.5;
   
   push();
   translate(random(800), 100);
