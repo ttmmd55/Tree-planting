@@ -1,17 +1,18 @@
 
-let planting = false;
+  
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight,WEBGL);
+  createCanvas(windowWidth, windowHeight,WEBGL);
   background(0);
   translate(-400,-100)
-  addGUI();
+  addGUI()
   img = loadImage('fruit.jpg')
+  
   
 }
 
 function drawTree(){
-  let bLen = len;
+  let bLen = random(20,100);
   let bAng = PI*0.5;
   
   push();
@@ -51,9 +52,8 @@ function addGUI(){
   
   //Adding a mouse pressed event listener to the button 
   button.mousePressed(drawTree); 
-
+  
 }
-
 
 function windowResized() {
 

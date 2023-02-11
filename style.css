@@ -4,10 +4,6 @@ html, body {
 }
 canvas {
   display: block;
-  width:800px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 100px;
 }
 
 .button{
@@ -20,7 +16,7 @@ canvas {
   border-radius: 10px;
   margin: 10px 0;
   box-sizing: border-box;
-
+  
   background-color: green;
   border: solid 1px green;
   border-radius: 10px;
