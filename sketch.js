@@ -1,5 +1,5 @@
 
-  
+let planting = false;
 
 function setup() {
   createCanvas(800, 300,WEBGL);
@@ -13,14 +13,14 @@ function setup() {
 
 function draw() {
   translate(-400,-100)
-  drawTree(); 
-  
   addGUI();
+  drawTree();
+  
 }
 
 function drawTree(){
-  let bLen = random(20,100);
-  let bAng = PI*0.5;
+  // let bLen = random(20,100);
+  // let bAng = PI*0.5;
   
   push();
   translate(random(800), 100);
@@ -63,27 +63,16 @@ function addGUI(){
   //Adding a mouse pressed event listener to the button 
   button.mousePressed(handleButtonPress); 
 
+
+
 }
 
-function handleButtonPress()
-{
-    if(food.length == 0 && !button.hasClass("inactive")){
-      food.push({
-          x:random(width),
-          y:random(height/2),
-          d:random(5,20)
-        });
-    }
+function handleButtonPress(){
+    if(!planting){
+      branch(random(20,100),PI*0.5)
     
-    if(food.length > 0){
       button.html("PLANTING");
       button.addClass("inactive");
     }
-  
-}
-
-function windowResized() {
-
-  resizeCanvas(windowWidth, windowHeight);
 
 }
