@@ -2,23 +2,16 @@
 let planting = false;
 
 function setup() {
-  createCanvas(800, 300,WEBGL);
+  canvas = createCanvas(windowWidth, windowHeight,WEBGL);
   background(0);
-  //let len=10;
-  
+  translate(-400,-100)
+  addGUI();
   img = loadImage('fruit.jpg')
   
 }
 
-function draw() {
-  translate(-400,-100)
-  addGUI();
-  drawTree();
-  
-}
-
 function drawTree(){
-  let bLen = random(20,100);
+  let bLen = len;
   let bAng = PI*0.5;
   
   push();
@@ -55,23 +48,15 @@ function addGUI(){
   button = createButton("plante");
 
   button.addClass("button");
-
-  //Add the play button to the parent gui HTML element
-  button.parent("gui-container");
   
   //Adding a mouse pressed event listener to the button 
-  button.mousePressed(handleButtonPress); 
-
-
+  button.mousePressed(drawTree); 
 
 }
 
-function handleButtonPress(){
-    if(!planting){
-      branch(random(20,100),PI*0.5)
-    
-      button.html("PLANTING");
-      button.addClass("inactive");
-    }
+
+function windowResized() {
+
+  resizeCanvas(windowWidth, windowHeight);
 
 }
